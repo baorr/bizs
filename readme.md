@@ -2,4 +2,4 @@
 I translate English pages I like into Chinese pages.
 
 # Translation Lists
-## How browsers work
+How browsers work
