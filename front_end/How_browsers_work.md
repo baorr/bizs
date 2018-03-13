@@ -1,6 +1,3 @@
-<style>
-      margin: 0em 0;
-</style>
 <div class="toc">  
 <ol>
 <li><a href="#Introduction">Introduction</a>
