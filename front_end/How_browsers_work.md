@@ -1,22 +1,22 @@
 # How browsers work
 <div class="toc">  
 <ol>
-<li><a href="#Introduction">Introduction</a>
+<li><a href="#Introduction">简介</a>
 <ol>
-    <li><a href="#The_browsers_we_will_talk_about">The browsers we will talk about</a></li>
-    <li><a href="#The_browser_main_functionality">The browser's main functionality</a></li>
-    <li><a href="#The_browser_high_level_structure">The browser's high level structure</a></li>
-    <li><a href="#Communication_between_the_components">Communication_between the components</a></li>
+    <li><a href="#The_browsers_we_will_talk_about">我们涉及到的浏览器</a></li>
+    <li><a href="#The_browser_main_functionality">浏览器主要的功能</a></li>
+    <li><a href="#The_browser_high_level_structure">浏览器的顶层架构</a></li>
+    <li><a href="#Communication_between_the_components">各组件之间的通信</a></li>
 </ol>
 </li>
-<li><a href="#The_rendering_engine">The rendering engine</a>
+<li><a href="#The_rendering_engine">渲染引擎</a>
 <ol>
-    <li><a href="#Rendering_engines">Rendering engines</a></li>
-    <li><a href="#The_main_flow">The main flow</a></li>
-    <li><a href="#Main_flow_examples">Main flow examples</a></li>
-    <li><a href="#Parsing_general">Parsing and DOM tree construction</a>
+    <li><a href="#Rendering_engines">各种浏览器的渲染引擎</a></li>
+    <li><a href="#The_main_flow">渲染的主流程</a></li>
+    <li><a href="#Main_flow_examples">渲染的主流程举例</a></li>
+    <li><a href="#Parsing_general">解析和DOM树的构建</a>
     <ol>
-        <li><a href="#Parsing_general">Parsing - general</a>
+        <li><a href="#Parsing_general">解析-通用</a>
         <ol>
             <li><a href="#Grammars">Grammars</a></li>
             <li><a href="#Parser_Lexer_combination">Parser - Lexer combination</a></li>
