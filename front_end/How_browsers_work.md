@@ -1,5 +1,5 @@
 # 浏览器工作原理
-### 主流浏览器背后的工作场景
+### 主流浏览器背后的工作场景的原理
 <div class="toc">  
 <ol>
 <li><a href="#Introduction">简介</a>
@@ -129,25 +129,21 @@
 </ol>
 </div>
 <div class="content">
-<h2><a name="Introduction">Introduction</a></h2>
+<h2><a name="Introduction">简介</a></h2>
 <p>
-Web browsers are probably the most widely used software.
-In this book I will explain how they work behind the scenes.
-We will see what happens when you type 'google.com' in the address bar until you see the Google page on the browser screen.
+Web浏览器可能是应用最广泛的软件，在这篇文章中，我将讲解浏览器背后的工作场景的原理。我们将看到，从你在地址栏输入“google.com”，到你看到google页面的整个过程中，浏览器都做了什么。
 </p>
 
-<h3><a name="The_browsers_we_will_talk_about">The browsers we will talk about</a></h3>
+<h3><a name="The_browsers_we_will_talk_about">我们涉及到的浏览器</a></h3>
 <p>
-There are five major browsers used today - Internet Explorer, Firefox, Safari, Chrome and Opera.
+当前，我们使用的五种主流的浏览器: Internet Explorer, Firefox, Safari, Chrome and Opera.
 <br>
-I will give examples from the open source browsers - Firefox,Chrome and Safari, which is partly open source.
+我将以开源浏览器（Firefox,Chrome）和部分开源浏览器（Safari）做为例子来讲解
 <br>
-According to the <a href="http://www.w3schools.com/browsers/browsers_stats.asp">W3C browser statistics</a><a>, currently(October 2009), the usage share of Firefox, Safari and Chrome together is nearly 60%.
-<br>
-So nowdays open source browsers are a substantial part of the browser business.
+根据 <a href="http://www.w3schools.com/browsers/browsers_stats.asp">W3C browser statistics（浏览器统计）</a><a>, 截止目前(10月 2009), Firefox, Safari and Chrome三种浏览器占有的整个市场份儿接近60%。所以，开源浏览器已经是整个浏览器行业的重要组成部分。
 </a></p><a>
 
-</a><h3><a></a><a name="The_browser_main_functionality">The browser's main functionality</a></h3>
+</a><h3><a></a><a name="The_browser_main_functionality">浏览器主要的功能</a></h3>
 <p>
 The browser main functionality is to present the web resource you choose, by requesting it from the server and displaying it on the browser window.
 The resource format is usually HTML but also PDF, image and more.
