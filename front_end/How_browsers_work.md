@@ -200,7 +200,7 @@ The browser's main components are (<a href="#1">1.1</a>):
 </ol>
 <p></p>
 <div>
-<img src="layers.png" width="500" height="339" alt="" title="" border="2" align="" style="padding:2px">
+<img src="http://taligarsiel.com/Projects/layers.png" width="500" height="339" alt="" title="" border="2" align="" style="padding:2px">
 <br>
 <span class="figure">Figure 1: Browser main components.</span>
 </div>
@@ -246,7 +246,7 @@ This will usually be done in 8K chunks.
 <p>
 After that this is the basic flow of the rendering engine:
 </p><div>
-<img src="flow.png" width="600" height="66" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/flow.png" width="600" height="66" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 2:Rendering engine basic flow.
 </span></div>
@@ -273,12 +273,12 @@ Parts of the content will be parsed and displayed, while the process continues w
 <h4><a name="Main_flow_examples">Main flow examples</a></h4>
 <p>
 </p><div>
-<img src="webkitflow.png" width="624" height="289" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/webkitflow.png" width="624" height="289" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 3: Webkit main flow</span>
 </div>
 <div>
-<img src="image008.jpg" width="624" height="290" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image008.jpg" width="624" height="290" alt="" title="" border="0" align="">
 <br>
 <br>
 <span class="figure">Figure 4: Mozilla's Gecko rendering engine main flow(<a href="#3_6">3.6</a>)</span>
@@ -305,7 +305,7 @@ The result of parsing is usually a tree of nodes that represent the structure of
 <p>
 Example - parsing the expression "2 + 3 - 1" could return this tree:
 </p><div>
-<img src="image009.png" width="400" height="155" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image009.png" width="400" height="155" alt="" title="" border="0" align="">
 <br> 
 <span class="figure">Figure 5: mathematical expression tree node</span>
 </div>
@@ -331,7 +331,7 @@ Syntax analysis is the applying of the language syntax rules.
 Parsers usually divide the work between two components - the <b>lexer</b>(sometimes called tokenizer) that is responsible for breaking the input into valid tokens, and the <b>parser</b> that is responsible for constructing the parse tree by analyzing the document structure according to the language syntax rules.
 The lexer knows how to strip irrelevant characters like white spaces and line breaks.
 </p><div>
-<img src="image011.png" width="101" height="300" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image011.png" width="101" height="300" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 6: from source document to parse trees</span>
 </div>
@@ -348,7 +348,7 @@ Parsing is often used in translation - transforming the input document to anothe
 An example is compilation. The compiler that compiles a source code into machine code first parses it into a parse tree and then translates the tree into a machine code document.
 </p>
 <div>
-<img src="image013.png" width="104" height="400" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image013.png" width="104" height="400" alt="" title="" border="0" align="">
 <br> 
 <span class="figure">Figure 7: compilation flow</span>
 </div>
@@ -500,7 +500,7 @@ Example, this markup:
 </pre>
 Would be translated to the following DOM tree:
 <div class="image"> 
-<img src="image015.png" width="400" height="219" alt="" title="" border="0" align=""> 
+<img src="http://taligarsiel.com/Projects/image015.png" width="400" height="219" alt="" title="" border="0" align=""> 
 <br>
 <span class="figure">Figure 8: DOM tree of the example markup
 </span></div> 
@@ -539,7 +539,7 @@ Among HTML tokens are start tags, end tags, attribute names and attribute values
 The tokenizer recognizes the token, gives it to the tree constructor and consumes the next character for recognizing the next token and so on until the end of the input.
 
 </p><div>
-<img src="image017.png" width="308" height="400" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image017.png" width="308" height="400" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 6: HTML parsing flow (taken from HTML5 spec)</span>
 </div>
@@ -574,7 +574,7 @@ We are now back at the <b>"Tag open state"</b>.
 Consuming the next input "/" will cause creation of an "end tag token" and a move to the <b>"Tag name state"</b>. Again we stay in this state until we reach "&gt;".Then the new tag token will be emitted and we go back to the <b>"Data state"</b>.
 The "&lt;/html&gt;" input will be treated like the previous case.
 <div>
-<img src="image019.png" width="627" height="387" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image019.png" width="627" height="387" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 9: Tokenizing the example input</span>
 </div>
@@ -612,7 +612,7 @@ The receiving of the body end token will cause a transfer to <b>"after body"</b>
 We will now receive the html end tag which will move us to <b>"after after body"</b> mode.
 Receiving the end of file token will end the parsing.
 </p><div>
-<img src="image022.gif" width="532" height="769" alt="" title="" border="0" align=""> 
+<img src="http://taligarsiel.com/Projects/image022.gif" width="532" height="769" alt="" title="" border="0" align=""> 
 <br>
 <span class="figure">Figure 10: tree construction of example html</span>
 </div>
@@ -835,7 +835,7 @@ Firefox uses a top down parser written manually.
 In both cases each CSS file is parsed into a StyleSheet object, each object contains CSS rules. The CSS rule objects contain selector and declaration objects and other object corresponding to CSS grammar.
 
 </p><div>
-<img src="image023.png" width="500" height="393" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image023.png" width="500" height="393" alt="" title="" border="0" align="">
 <br> 
 <span class="figure">Figure 7: parsing CSS</span>
 </div>
@@ -944,7 +944,7 @@ Some render objects correspond to a DOM node but not in the same place in the tr
 Floats and absolutely positioned elements are out of flow, placed in a different place in the tree, and mapped to the real frame.
 A placeholder frame is where they should have been.
 </p><div>
-<a name="rendertree"><img src="image025.png" width="731" height="396" alt="" title="" border="0" align=""></a>
+<a name="rendertree"><img src="http://taligarsiel.com/Projects/image025.png" width="731" height="396" alt="" title="" border="0" align=""></a>
 <br> 
 <span class="figure">Figure 11: The render tree and the corresponding DOM tree(<a href="#3_1">3.1</a>). The "Viewport" is the initial containing block. In Webkit it will be the "RenderView" object.</span>
 </div>
@@ -1016,7 +1016,7 @@ The nodes are siblings or cousins and:
 Firefox has two extra trees for easier style computation - the rule tree and style context tree.
 Webkit also has style objects but they are not stored in a tree like the style context tree, only the DOM node points to its relevant style.
 </p><div>
-<img src="image035.png" width="640" height="407" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image035.png" width="640" height="407" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 13: Firefox style context tree(<a href="#2_2">2.2</a>)
 </span></div>
@@ -1035,7 +1035,7 @@ Storing the rules is done lazily. The tree isn't calculated at the beginning for
 The idea is to see the tree paths as words in a lexicon.
 Lets say we already computed this rule tree:
 </p><div class="image&quot;">
-<img src="tree.png" width="400" height="261" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/tree.png" width="400" height="261" alt="" title="" border="0" align="">
 </div>
 Suppose we need to match rules for another element in the content tree, and find out the matched rules (in the correct order) are B - E - I. We already have this path in the tree because we already computed path  A - B - E - I - L. We will now have less work to do.
 <br>
@@ -1102,14 +1102,14 @@ The margin struct contains the four sides.
 <br>
 The resulting rule tree will look like this (the nodes are marked with the node name : the # of rule they point at):
 </p><div class="image">
-<img src="image027.png" width="500" height="294" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image027.png" width="500" height="294" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 12: The rule tree</span>
 </div>
 <br>
 The context tree will look like this (node name : rule node they point to):
 <div class="image">
-<img src="image029.png" width="400" height="305" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image029.png" width="400" height="305" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 13: The context tree</span>
 </div> 
@@ -1323,7 +1323,7 @@ Layout can be incremental, only the dirty renderers will be layed out (this can 
 <br>
 Incremental layout is triggered (asynchronously) when renderers are dirty. For example when new renderers are appended to the render tree after extra content came from the network and was added to the DOM tree.
 </p><div>
-<img src="reflow.png" width="326" height="341" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/reflow.png" width="326" height="341" alt="" title="" border="0" align="">
 <br><span class="figure">Figure 20:Incremental layout - only dirty renderers and their children are layed out(<a href="#3_6">3.6</a>).</span>
 </div>
 <p></p>
@@ -1475,7 +1475,7 @@ The <a href="http://www.w3.org/TR/CSS2/box.html">CSS box model</a> describes the
 <br>
 Each box has a content area (e.g., text, an image, etc.) and optional surrounding padding, border, and margin areas.
 </p><div>
-<img src="image046.jpg" width="509" height="348" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image046.jpg" width="509" height="348" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 14:CSS2 box model</span>
 </div>
@@ -1528,7 +1528,7 @@ The way the box is layed out is determined by:
 <p>
 Block box: forms a block - have their own rectangle on the browser window.
 </p><div>
-<img src="image057.png" width="150" height="127" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image057.png" width="150" height="127" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 15:Block box</span>
 </div>
@@ -1536,7 +1536,7 @@ Block box: forms a block - have their own rectangle on the browser window.
 <p>
 Inline box: does not have its own block, but is inside a containing block.
 </p><div>
-<img src="image059.png" width="300" height="233" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image059.png" width="300" height="233" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 15:Inine boxes</span>
 </div>
@@ -1545,7 +1545,7 @@ Inline box: does not have its own block, but is inside a containing block.
 Blocks are formatted vertically one after the other.
 Inlines are formatted horizontally.
 </p><div>
-<img src="image061.png" width="350" height="324" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image061.png" width="350" height="324" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 16:Block and Inline formatting</span>
 </div>
@@ -1556,7 +1556,7 @@ The lines are at least as tall as the tallest box but can be taller, when the bo
 In case the container width is not enough, the inlines will be put in several lines.
 This is usually what happens in a paragraph.
 </p><div>
-<img src="image063.png" width="400" height="277" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image063.png" width="400" height="277" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 17:Lines</span>
 </div>
@@ -1566,7 +1566,7 @@ This is usually what happens in a paragraph.
 <p>
 Relative positioning - positioned like usual and then moved by the required delta.
 </p><div>
-<img src="image065.png" width="500" height="261" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image065.png" width="500" height="261" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 18:Relative positioning</span>
 </div>
@@ -1581,7 +1581,7 @@ The HTML:
 </pre>
 Will look like:
 <div>
-<img src="image067.png" width="444" height="203" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image067.png" width="444" height="203" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 19:Float</span>
 </div>
@@ -1592,7 +1592,7 @@ The layout is defined exactly regardless of the normal flow. The element does no
 The dimensions are relative to the container.
 In fixed - the container is the view port. 
 </p><div>
-<img src="image069.png" width="500" height="343" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image069.png" width="500" height="343" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 20:Fixed positioning</span>
 </div>
@@ -1632,7 +1632,7 @@ Example:
 </pre>
 The result will be this:
 <div>
-<img src="image071.png" width="254" height="227" alt="" title="" border="0" align="">
+<img src="http://taligarsiel.com/Projects/image071.png" width="254" height="227" alt="" title="" border="0" align="">
 <br>
 <span class="figure">Figure 20:Fixed positioning</span>
 </div> 
