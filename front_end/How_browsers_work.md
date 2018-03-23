@@ -19,111 +19,111 @@
     <ol>
         <li><a href="#Parsing_general">解析-通用</a>
         <ol>
-            <li><a href="#Grammars">Grammars</a></li>
-            <li><a href="#Parser_Lexer_combination">Parser - Lexer combination</a></li>
-            <li><a href="#Translation">Translation</a></li>
-            <li><a href="#Parsing_example">Parsing example</a></li>
-            <li><a href="#Formal_definitions_for_vocabulary_and_syntax">Formal definitions for vocabulary and syntax</a></li>
-            <li><a href="#Types_of_parsers">Types of parsers</a></li>
-            <li><a href="#Generating_parsers_automatically">Generating parsers automatically</a></li>
+            <li><a href="#Grammars">语法</a></li>
+            <li><a href="#Parser_Lexer_combination">解析 - 词法分析程序的组合</a></li>
+            <li><a href="#Translation">转码</a></li>
+            <li><a href="#Parsing_example">转码示例</a></li>
+            <li><a href="#Formal_definitions_for_vocabulary_and_syntax">词汇和语法的定义</a></li>
+            <li><a href="#Types_of_parsers">编译器的种类</a></li>
+            <li><a href="#Generating_parsers_automatically">自动产生编译器</a></li>
         </ol>
         </li>
-        <li><a href="#HTML_Parser">HTML Parser</a>
+        <li><a href="#HTML_Parser">编译HTML</a>
         <ol>
-          <li><a href="#The_HTML_grammar_definition">The HTML grammar definition</a></li>
+          <li><a href="#The_HTML_grammar_definition">HTML 语法定义</a></li>
           <li><a href="#Not_a_context_free_grammar">Not a context free grammar</a></li>
           <li><a href="#HTML_DTD">HTML DTD</a></li>
           <li><a href="#DOM">DOM</a></li>
-          <li><a href="#The_parsing_algorithm">The parsing algorithm</a></li>
-          <li><a href="#The_tokenization_algorithm">The tokenization algorithm</a></li>
-          <li><a href="#Tree_construction_algorithm">Tree construction algorithm</a></li>
+          <li><a href="#The_parsing_algorithm">编译算法</a></li>
+          <li><a href="#The_tokenization_algorithm">The tokenization 算法</a></li>
+          <li><a href="#Tree_construction_algorithm">构建树算法</a></li>
           <li><a href="#Actions_when_the_parsing_is_finished">Actions when the parsing is finished</a></li>
-          <li><a href="#Browsers_error_tolerance">Browsers error tolerance</a></li>
+          <li><a href="#Browsers_error_tolerance">浏览器容错处理</a></li>
         </ol>
         </li>
-        <li><a href="#CSS_parsing">CSS parsing</a>
+        <li><a href="#CSS_parsing">编译CSS</a>
         <ol>
-          <li><a href="#Webkit_CSS_parser">Webkit CSS parser</a></li>
+          <li><a href="#Webkit_CSS_parser">Webkit内核的CSS解析器</a></li>
         </ol>
         </li>
-        <li><a href="#Parsing_scripts">Parsing scripts</a></li>
-        <li><a href="#The_order_of_processing_scripts_and_style_sheets">The order of processing scripts and style sheets</a>
+        <li><a href="#Parsing_scripts">编译脚本</a></li>
+        <li><a href="#The_order_of_processing_scripts_and_style_sheets">处理CSS和脚本的顺序</a>
         <ol>
-          <li><a href="#Scripts">Scripts</a></li>
-          <li><a href="#Speculative_parsing">Speculative parsing</a></li>
-          <li><a href="#Style_sheets">Style sheets</a></li>
+          <li><a href="#Scripts">脚本</a></li>
+          <li><a href="#Speculative_parsing">推测编译</a></li>
+          <li><a href="#Style_sheets">样式表</a></li>
         </ol>
         </li>
     </ol>
     </li>
-    <li><a href="#Render_tree_construction">Render tree construction</a>
+    <li><a href="#Render_tree_construction">渲染构建树</a>
     <ol>
-      <li><a href="#The_render_tree_relation_to_the_DOM_tree">The render tree relation to the DOM tree</a></li>
-      <li><a href="#The_flow_of_constructing_the_tree">The flow of constructing the tree</a></li>
-      <li><a href="#Style_Computation">Style Computation</a>
+      <li><a href="#The_render_tree_relation_to_the_DOM_tree">渲染树和DOM树的关系</a></li>
+      <li><a href="#The_flow_of_constructing_the_tree">构造树的流程</a></li>
+      <li><a href="#Style_Computation">样式计算</a>
       <ol>
-        <li><a href="#Sharing_style_data">Sharing style data</a></li>
-        <li><a href="#Firefox_rule_tree">Firefox rule tree</a>
+        <li><a href="#Sharing_style_data">共享样式数据</a></li>
+        <li><a href="#Firefox_rule_tree">Firefox规则树</a>
         <ol>
             <li><a href="#Division_into_structs">Division into structs</a></li>
-          <li><a href="#Computing_the_style_contexts_using_the_rule_tree">Computing the style contexts using the rule       tree</a></li>
+          <li><a href="#Computing_the_style_contexts_using_the_rule_tree">Computing the style contexts using the rule  tree</a></li>
         </ol>
         </li>
         <li><a href="#Manipulating_the_rules_for_an_easy_match">Manipulating the rules for an easy match</a></li>
         <li><a href="#Applying_the_rules_in_the_correct_cascade_order">Applying the rules in the correct cascade order</a>
         <ol>
-        <li><a href="#Style_sheet_cascade_order">Style sheet cascade order</a></li>
-        <li><a href="#Specifity">Specifity</a></li>
-        <li><a href="#Sorting_the_rules">Sorting the rules</a></li>
+        <li><a href="#Style_sheet_cascade_order">级联样式的顺序</a></li>
+        <li><a href="#Specifity">特例</a></li>
+        <li><a href="#Sorting_the_rules">规则排序</a></li>
         </ol>
         </li>
       </ol>
       </li>
-      <li><a href="#Gradual_process">Gradual process</a></li>
+      <li><a href="#Gradual_process">平滑处理</a></li>
     </ol>
     </li>
-     <li><a href="#Layout">Layout</a>
+     <li><a href="#Layout">定位</a>
       <ol>
         <li><a href="#Dirty_bit_system">Dirty bit system</a></li>
         <li><a href="#Global_and_incremental_layout">Global and incremental layout</a></li>
-        <li><a href="#Asynchronous_and_Synchronous_layout">Asynchronous and Synchronous layout</a></li>
-        <li><a href="#Optimizations">Optimizations</a></li>
+        <li><a href="#Asynchronous_and_Synchronous_layout">同步和异步定位</a></li>
+        <li><a href="#Optimizations">定位优化</a></li>
         <li><a href="#The_layout_process">The layout process</a></li>
         <li><a href="#Width_calculation">Width calculation</a></li>
         <li><a href="#Line_Breaking">Line Breaking</a></li>
       </ol>
      </li>
-     <li><a href="#Painting">Painting</a>
+     <li><a href="#Painting">绘制</a>
       <ol>
         <li><a href="#Global_and_Incremental">Global and Incremental</a></li>
-        <li><a href="#The_painting_order">The painting order</a></li>
+        <li><a href="#The_painting_order">绘制顺序</a></li>
         <li><a href="#Firefox_display_list">Firefox display list</a></li>
         <li><a href="#Webkit_rectangle_storage">Webkit rectangle storage</a></li>
       </ol>
      </li>
-     <li><a href="#Dynamic_changes">Dynamic changes</a></li>
-     <li><a href="#The_rendering_engines_threads">The rendering engine's threads</a>
+     <li><a href="#Dynamic_changes">动态改变</a></li>
+     <li><a href="#The_rendering_engines_threads">渲染引擎的线程</a>
       <ol>
-        <li><a href="#Event_loop">Event loop</a></li>
+        <li><a href="#Event_loop">事件循环</a></li>
       </ol> 
      </li>
-      <li><a href="#css">CSS2 visual model</a>
+      <li><a href="#css">CSS2可视化模型</a>
       <ol>
-        <li><a href="#The_canvas">The canvas</a></li>
-        <li><a href="#CSS_Box_model">CSS Box model</a></li>
-        <li><a href="#Positioning_scheme">Positioning scheme</a></li>
-        <li><a href="#Box_types">Box types</a></li>
-        <li><a href="#Positioning">Positioning</a>
+        <li><a href="#The_canvas">画布</a></li>
+        <li><a href="#CSS_Box_model">CSS盒子模型</a></li>
+        <li><a href="#Positioning_scheme">定位方式</a></li>
+        <li><a href="#Box_types">盒子模型类型</a></li>
+        <li><a href="#Positioning">定位</a>
         <ol>
-            <li><a href="#Relative">Relative</a></li>
-            <li><a href="#Floats">Floats</a></li>
-            <li><a href="#Absolute_and_fixed">Absolute and fixed</a></li>
+            <li><a href="#Relative">相对定位</a></li>
+            <li><a href="#Floats">浮动定位</a></li>
+            <li><a href="#Absolute_and_fixed">绝对和固定定位</a></li>
         </ol>
         </li>
-        <li><a href="#Layered_representation">Layered representation</a></li>
+        <li><a href="#Layered_representation">层次展示</a></li>
       </ol>
      </li>
-     <li><a href="#Resources">Resources</a></li>
+     <li><a href="#Resources">相关资料</a></li>
 </ol>   
 </li>
 </ol>
