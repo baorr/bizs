@@ -6,7 +6,7 @@
 <ol>
     <li><a href="#The_browsers_we_will_talk_about">我们涉及到的浏览器</a></li>
     <li><a href="#The_browser_main_functionality">浏览器主要的功能</a></li>
-    <li><a href="#The_browser_high_level_structure">浏览器的顶层架构</a></li>
+    <li><a href="#The_browser_high_level_structure">浏览器顶层架构</a>(The browser's high level structure)</li>
     <li><a href="#Communication_between_the_components">各组件之间的通信</a></li>
 </ol>
 </li>
@@ -145,54 +145,48 @@ Web浏览器可能是应用最广泛的软件，在这篇文章中，我将讲�
 
 </a><h3><a></a><a name="The_browser_main_functionality">浏览器主要的功能</a></h3>
 <p>
-The browser main functionality is to present the web resource you choose, by requesting it from the server and displaying it on the browser window.
-The resource format is usually HTML but also PDF, image and more.
-The location of the resource is specified by the user using a URI (Uniform resource Identifier). More on that in the network chapter.
+浏览器主要的功能把你选定的web资源，从服务器下载下来，并显示到浏览器窗口。这些资源的格式通常来说不仅仅是html格式也可以是PDF格式，图片格式等。我们通过URI（Uniform resource Identifier）来特定找到对应的资源的地址。在网络这一章，我们涉及更多的相关知识。
 </p>
 <p>
-The way the browser interprets and displays HTML files is specified in the HTML and CSS specifications.
-These specifications are maintained by the <a name="w3c">W3C</a> (World Wide Web Consortium) organization, which is the standards organization for the web.
+浏览器根据HTML和CSS的标准，来解析一个HTML的文件，并显示到浏览器窗口。HTML和CSS的标准是由<a name="w3c">W3C</a> (万维网联盟)组织来维护，这个组织也是互联网的制定组织。
 <br>
-The current version of HTML is 4 (<a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401/</a>). Version 5 is in progress. 
-The current CSS version is 2 (<a href="http://www.w3.org/TR/CSS2/">http://www.w3.org/TR/CSS2/</a>) and version 3 is in progress. 
+当前的HTML版本是4(<a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401/</a>)，HTML5已经在编写中。
+当前CSS的标准的版本是2(<a href="http://www.w3.org/TR/CSS2/">http://www.w3.org/TR/CSS2/</a>)，版本3也在编写中。
+<p style="color: green; text-decoration: underline;">注：这篇文章是很早的文章，所以略有出入。</p>
 <br>
-For years browsers conformed to only a part of the specifications and developed their own extensions.
-That caused serious compatibility issues for web authors.
-Today most of the browsers more or less conform to the specifications.
+多年以来，浏览器的厂商们，仅仅遵循一部分标准，大部分都是开发自己的扩展功能，这也给web的开发者带了很多兼容性的问题。现在，大多数的浏览器厂商们都或多或少遵守标准。
 </p>
 <p>
-Browsers' user interface have a lot in common with each other. Among the common user interface elements are:
+各种浏览器客户端的界面大同小异，下面罗列一下这些相同的客户界面:
 </p><ul>
-<li>Address bar for inserting the URI</li>
-<li>Back and forward buttons</li>
-<li>Bookmarking options</li>
-<li>A refresh and stop buttons for refreshing and stopping the loading of current documents</li>
-<li>Home button that gets you to your home page</li>
+<li>输入URL的地址栏</li>
+<li>前进和后退按钮</li>
+<li>书签选项</li>
+<li>刷新按钮和停止按钮（分别用来重新下在当前文档和停止下载当前文档）</li>
+<li>Home按钮，单击可以返回你的主页。</li>
 </ul>
-
-Strangely enough, the browser's user interface is not specified in any formal specification, it is just good practices shaped over years of experience and by browsers imitating each other.
-The HTML5 specification doesn't define UI elements a browser must have, but lists some common elements. Among those are the address bar, status bar and tool bar.
-There are, of course, features unique to a specific browser like Firefox downloads manager.
+值得一提的是，没有官方的浏览器界面文档，浏览器的界面是根据各个厂商多年的经验和相互借鉴形成的。
+HTML5的文档也没有规定浏览器界面必须有哪些组件，但是文档中罗列一些通用的UI的组件。它们是地址栏，状态栏以及工具栏。当然，也有一些功能是某些浏览器特有的，例如Firefox的，下载管理（<p style="color: green; text-decoration: underline;">注：现在很多浏览器也有下载管理了</p>）。
 <br>
-More on that in the user interface chapter.
+更多的内容，我们将会在用户界面看到。
 <p></p>
-<h3><a name="The_browser_high_level_structure">The browser's high level structure</a></h3>
+<h3><a name="The_browser_high_level_structure">浏览器顶层架构(The browser's high level structure)</a></h3>
 <p>
-The browser's main components are (<a href="#1">1.1</a>):
+浏览器的主要组成部分： (<a href="#1">1.1</a>):
 </p><ol>
-<li>The user interface - this includes the address bar, back/forward button, bookmarking menu etc. Every part of the browser display except the main window where you see the requested page.</li>
+<li>用户界面 - 浏览器的每一个部分，如地址栏，前进／后退按钮，书签按钮等，除了用来显示你请求页面的主窗口。</li>
 
-<li>The browser engine - the interface for querying and manipulating the rendering engine.</li>
-<li>The rendering engine - responsible for displaying the requested content. For example if the requested content is HTML, it is responsible for parsing the HTML and CSS and displaying the parsed content on the screen.</li>
+<li>浏览器引擎 - 用来查询和操作渲染引擎的借口。</li>
+<li>渲染引擎 - 负责显示请求的内容. 例如，请求的内容是HTML，那么渲染引擎负责解析HTML和CSS，并把解析好的内容显示到屏幕上.</li>
 
-<li>Networking - used for network calls, like HTTP requests. It has platform independent interface and underneath implementations for each platform.</li>
+<li>网络管理 - used for network calls, like HTTP requests. It has platform independent interface and underneath implementations for each platform.</li>
 
 
-<li>UI backend - used for drawing basic widgets like combo boxes and windows. It exposes a generic interface that is not platform specific. Underneath it uses the operating system user interface methods.</li>
+<li>浏览器后台UI - used for drawing basic widgets like combo boxes and windows. It exposes a generic interface that is not platform specific. Underneath it uses the operating system user interface methods.</li>
 
-<li>JavaScript interpreter. Used to parse and execute the JavaScript code.</li>
+<li>JavaScript编译器. Used to parse and execute the JavaScript code.</li>
 
-<li>Data storage. This is a persistence layer. The browser needs to save all sorts of data on the hard disk, for examples, cookies. The new HTML specification (HTML5) defines 'web database' which is a complete (although light) database in the browser.</li>
+<li>数据存储. This is a persistence layer. The browser needs to save all sorts of data on the hard disk, for examples, cookies. The new HTML specification (HTML5) defines 'web database' which is a complete (although light) database in the browser.</li>
 </ol>
 <p></p>
 <div>
