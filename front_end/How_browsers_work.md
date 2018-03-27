@@ -6,7 +6,7 @@
 <ol>
     <li><a href="#The_browsers_we_will_talk_about">我们涉及到的浏览器</a></li>
     <li><a href="#The_browser_main_functionality">浏览器主要的功能</a></li>
-    <li><a href="#The_browser_high_level_structure">浏览器顶层架构</a>(The browser's high level structure)</li>
+    <li><a href="#The_browser_high_level_structure">浏览器上层架构</a></li>
     <li><a href="#Communication_between_the_components">各组件之间的通信</a></li>
 </ol>
 </li>
@@ -14,7 +14,7 @@
 <ol>
     <li><a href="#Rendering_engines">各种浏览器的渲染引擎</a></li>
     <li><a href="#The_main_flow">渲染的主流程</a></li>
-    <li><a href="#Main_flow_examples">渲染的主流程举例</a></li>
+    <li><a href="#Main_flow_examples">渲染的主流程例子</a></li>
     <li><a href="#Parsing_general">解析和DOM树的构建</a>
     <ol>
         <li><a href="#Parsing_general">解析-通用</a>
@@ -170,7 +170,7 @@ HTML5的文档也没有规定浏览器界面必须有哪些组件，但是文档
 <br>
 更多的内容，我们将会在用户界面看到。
 <p></p>
-<h3><a name="The_browser_high_level_structure">浏览器顶层架构(The browser's high level structure)</a></h3>
+<h3><a name="The_browser_high_level_structure">浏览器上层架构</a></h3>
 <p>
 浏览器的主要组成部分： (<a href="#1">1.1</a>):
 </p><ol>
@@ -179,102 +179,89 @@ HTML5的文档也没有规定浏览器界面必须有哪些组件，但是文档
 <li>浏览器引擎 - 用来查询和操作渲染引擎的借口。</li>
 <li>渲染引擎 - 负责显示请求的内容. 例如，请求的内容是HTML，那么渲染引擎负责解析HTML和CSS，并把解析好的内容显示到屏幕上.</li>
 
-<li>网络管理 - used for network calls, like HTTP requests. It has platform independent interface and underneath implementations for each platform.</li>
+<li>网络管理 - 用于网络调用，像HTTP请求。基于不同的平台的底层网络接口，做不同实现。</li>
+<li>浏览器后台UI - 用来画基础组件，像组合框和窗口。它暴露出一个通用接口（每个平台都一样），这个接口会调用系统的用户界面的方法。</li>
 
+<li>JavaScript编译器. 用来编译和执行Javascript的代码。</li>
 
-<li>浏览器后台UI - used for drawing basic widgets like combo boxes and windows. It exposes a generic interface that is not platform specific. Underneath it uses the operating system user interface methods.</li>
-
-<li>JavaScript编译器. Used to parse and execute the JavaScript code.</li>
-
-<li>数据存储. This is a persistence layer. The browser needs to save all sorts of data on the hard disk, for examples, cookies. The new HTML specification (HTML5) defines 'web database' which is a complete (although light) database in the browser.</li>
+<li>数据存储 - 这是一个持久层，浏览器需要把各种数据保存在硬盘上，例如，cookies。新的HTML规范（HTML5）定义了Web数据库，它是浏览器中一个完整的（虽然是轻的）数据库。</li>
 </ol>
 <p></p>
 <div>
 <img src="http://taligarsiel.com/Projects/layers.png" width="500" height="339" alt="" title="" border="2" align="" style="padding:2px">
 <br>
-<span class="figure">Figure 1: Browser main components.</span>
+<span class="figure">图1：浏览器主要组件。</span>
 </div>
+<p>值得注意是，和其他大多数的浏览器不同，Chrome浏览器的渲染引擎可以多实例，一个选项卡就对应一个渲染引擎实例，而且每个选项卡是一个单独的进程。</p>
 <p>
-It is important to note that Chrome, unlike most browsers, holds multiple instances of the rendering engine - one for each tab,.
-Each tab is a separate process.
+我将竭尽所能为这些组件专门写一个章节。
 </p>
+<h3><a name="Communication_between_the_components">各组件之间的通信</a></h3>
 <p>
-I will devote a chapter for each of these components.
-</p>
-<h3><a name="Communication_between_the_components">Communication between the components</a></h3>
-<p>
-Both Firefox and Chrome developed a special communication infrastructures.
+Firefox和Chrome都开发了特定的通信基础功能。
 <br>
-They will be discussed in a special chapter.
+会有专门的章节来讲解的。
 </p>
 
-<h2><a name="The_rendering_engine">The rendering engine</a></h2>
+<h2><a name="The_rendering_engine">渲染引擎</a></h2>
 <p>
-The responsibility of the rendering engine is well... Rendering, that is display of the requested contents on the browser screen.
+好吧，渲染引擎的主要职责是渲染，把浏览器请求过来的内容显示到浏览器的屏幕上。
 </p>
 <p>
-By default the rendering engine can display HTML and XML documents and images.
-It can display other types through a plug-in (a browser extension). An example is displaying PDF using a PDF viewer plug-in. We will talk about plug-ins and extensions in a special chapter.
-In this chapter we will focus on the main use case - displaying HTML and images that are formatted using CSS.</p>
-
-<h3><a name="Rendering_engines">Rendering engines</a></h3>
-<p>
-Our reference browsers - Firefox, Chrome and Safari are built upon two rendering engines.
-Firefox uses Gecko - a "home made" Mozilla rendering engine.
-Both Safari and Chrome use Webkit.
-</p>
-<p>
-Webkit is an open source rendering engine which started as an engine for the Linux platform and was modified by Apple to support Mac and Windows.
-See <a href="http://webkit.org/">http://webkit.org/</a> for more details.
+在默认你情况下，渲染引擎能展示HTML文档，XML文档和各种图片。渲染引擎也能通过插件（浏览器扩展）去展示其他格式的文件，例如用PDF的插件显示PDF文件。我们会有专门的一章去讲解插件和扩展。本章我们将重点放在，HTML和图片是怎么和CSS样式表结合在一起，显示到浏览器上。
 </p>
 
-<h3><a name="The_main_flow">The main flow</a></h3>
+<h3><a name="Rendering_engines">各种浏览器的渲染引擎</a></h3>
 <p>
-The rendering engine will start getting the contents of the requested document from the networking layer.
-This will usually be done in 8K chunks.
+我们提到的浏览器（Firefox，Chrome， Safari）用到的是两种渲染引擎。
+Firefox使用Gecko - Mozilla"自产"的渲染引擎
+Safari和Chrome使用的是Webkit
 </p>
 <p>
-After that this is the basic flow of the rendering engine:
+Webkit是一个开源的渲染引擎，起初是为Linux平台的而写的，后来苹果公司做出了改动，从而支持Mac平台和Windows平台。从 <a href="http://webkit.org/">http://webkit.org/</a>可以获得更多的信息。
+</p>
+
+<h3><a name="The_main_flow">渲染的主流程</a></h3>
+<p>
+渲染引擎将从网络层开始获取所请求文档的内容，整个过程通常需要8KB的块。
+</p>
+<p>
+在此之后，渲染引擎的基本流程：
 </p><div>
 <img src="http://taligarsiel.com/Projects/flow.png" width="600" height="66" alt="" title="" border="0" align="">
 <br>
-<span class="figure">Figure 2:Rendering engine basic flow.
+<span class="figure">图2-渲染引擎的基本流程
 </span></div>
 <p></p>
 <p>
-The rendering engine will start parsing the HTML document and turn the tags to <a href="#DOM">DOM</a> nodes in a tree called the "content tree".
-It will parse the style data, both in external CSS files and in style elements.
-The styling information together with visual instructions in the HTML will be used to create another tree - the <a href="#Render_tree_construction">render tree</a><a>.
-</a></p><a>
+渲染引擎开始解析HTML文档，并把HTML中标签转换成“内容树”的<a href="#DOM">DOM</a> 节点。
+渲染引擎开始解析样式数据，包括外部CSS文件和含有CSS样式的元素。把这些样式信息和HTML的呈现层的数据放在一起，用来创建另外叫做<a href="#Render_tree_construction">渲染树</a>
+</p>
 <p>
-The render tree contains rectangles with visual attributes like color and dimensions.
-The rectangles are in the right order to be displayed on the screen.
+渲染树包含所有的带有色彩和尺寸的信息的矩形，这些矩形才能以正确的顺序显示在屏幕上。
 </p>
 </a><p><a>
-After the construction of the render tree it goes through a "</a><a href="#layout">layout</a>" process.
-This means giving each node the exact coordinates where it should appear on the screen.
-The next stage is <a href="painting">painting</a> - the render tree will be traversed and each node will be painted using the UI backend layer.
+在创建了渲染树之后，就开始做<a href="#layout">“布局”</a>流程，这一过程就是计算出每一个节点，显示在屏幕上的精确的坐标。
+下一个阶段就是<a href="painting">绘制</a>，浏览器会遍历渲染树的每一个节点，调用后台界面层的方法去绘制所有节点。
 </p>
 <p>
-It's important to understand that this is a gradual process. For better user experience, the rendering engine will try to display contents on the screen as soon as possible.
-It will not wait until all HTML is parsed before starting to build and layout the render tree.
-Parts of the content will be parsed and displayed, while the process continues with the rest of the contents that keeps coming from the network.
+逐步理解整个流程是非常重要的，为了获得更好的用户体验，渲染引擎将尽可能快地把内容显示到屏幕上。浏览器不需要等到所有的HTML被解析，才开始构建和布局渲染树，获得一部分内容就去解析并显示，而这个流程继续处理来自网络的内容。
 </p>
-<h4><a name="Main_flow_examples">Main flow examples</a></h4>
+<h4><a name="Main_flow_examples">渲染的主流程例子</a></h4>
 <p>
 </p><div>
 <img src="http://taligarsiel.com/Projects/webkitflow.png" width="624" height="289" alt="" title="" border="0" align="">
 <br>
-<span class="figure">Figure 3: Webkit main flow</span>
+<span class="figure">图 3: Webkit渲染引擎主流程</span>
 </div>
 <div>
 <img src="http://taligarsiel.com/Projects/image008.jpg" width="624" height="290" alt="" title="" border="0" align="">
 <br>
 <br>
-<span class="figure">Figure 4: Mozilla's Gecko rendering engine main flow(<a href="#3_6">3.6</a>)</span>
+<span class="figure">图 4: Mozilla's Gecko渲染引擎主流程(<a href="#3_6">3.6</a>)</span>
 </div>
 <p>
-From figures 3 and 4 you can see that although Webkit and Gecko use slightly different terminology, the flow is basically the same.
+从图3和图4，可以看出，尽管Webkit和Gecko略有区别，但整体流程还是一致的。
 <br>
 Gecko calls the tree of visually formatted elements - Frame tree. Each element is a frame.
 Webkit uses the term "Render Tree" and it consists of "Render Objects".
