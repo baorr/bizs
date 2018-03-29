@@ -1,3 +1,6 @@
+# 7 Essential JavaScript Functions
+## 原文章出处 https://davidwalsh.name/essential-javascript-functions
+## 原作者：David Walsh
 <article itemscope="" itemtype="http://schema.org/Article"><h1 itemprop="headline" class="offscreen">7必须知道JS函数</h1><div class="meta" id="meta">
 By
 <a href="http://davidwalsh.name" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name">David Walsh</span></a>&nbsp;on
